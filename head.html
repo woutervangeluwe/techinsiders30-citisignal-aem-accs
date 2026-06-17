@@ -40,6 +40,35 @@
         import('/scripts/__dropins__/tools/shims/importmap.js');
     }
 </script>
+<script nonce="aem" src="/scripts/styleconfigurations.js"></script>
+
+<script nonce="aem">
+    !function (n, o) {
+      o.forEach(function (o) {
+        n[o] || ((n.__alloyNS = n.__alloyNS ||
+          []).push(o), n[o] = function () {
+            var u = arguments; return new Promise(
+              function (i, l) { n[o].q.push([i, l, u]) })
+          }, n[o].q = [])
+      })
+    }
+      (window, ["alloy"]);
+    </script>
+
+<script nonce="aem" src="/scripts/alloy.js"></script>
+
+<script nonce="aem">
+    alloy("configure", {
+        defaultConsent: "in",
+        edgeDomain: "edge.adobedc.net",
+        edgeBasePath: "ee",
+        datastreamId: "e1a25a24-bcb5-41af-9135-1f7771d3bfe8", // replace datastreamId
+        orgId: "907075E95BF479EC0A495C73@AdobeOrg", // replace ims org Id
+        debugEnabled: true,
+        idMigrationEnabled: false,
+        thirdPartyCookiesEnabled: false,
+        prehidingStyle: ".personalization-container { opacity: 0 !important }",
+    });
 
 <script nonce="aem" src="/scripts/aem.js" type="module"></script>
 <script nonce="aem" src="/scripts/scripts.js" type="module"></script>
